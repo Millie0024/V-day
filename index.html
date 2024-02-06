@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Be Mine UwU</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+</head>
+
+<body>
+  <div class="text t1">
+    Hello there!
+  </div>
+  <img src="hello-cutie.jpg" alt="" class="pic1">
+  <div class="text2">
+    Welcome to Our Little Corner Of Love~
+  </div>
+
+  <div class="cont">
+
+    <img src="love.jpg" alt="">
+    <img src="love1.jpg" alt="">
+    <img src="love2.jpg" alt="">
+  </div>
+  <div class="cont2">
+    <div class="text3">
+      I have been in love with you for almost four years now, and if you say yes to just one question, then this could be us~
+    </div>
+    <img src="this-could-be-us.jpg" alt="">
+    <div class="text6">
+      But if you say no, then well this will happen to you~
+    </div>
+
+    <img src="fight.jpg" alt="">
+    <div class="text4">
+      So, please say yes!
+    </div>
+
+    <img src="say-yes.png" alt="">
+    <div class="text5">
+      Will you be my valentine?
+    </div>
+    <button id="yesButton" type="button" name="button">Yes :)</button>
+    <button id="noButton" type="button" name="button">No :( </button>
+
+    <div id="response" class="text6">
+      You know the right answer UwU
+    </div>
+    <div id="gifContainer"></div>
+  </div>
+  <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+  <script>
+    // Function to create confetti effect
+    function celebrate() {
+      var confettiSettings = { target: 'confetti-canvas' };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+    }
+
+    // Event listener for the "Yes" button
+    document.getElementById('yesButton').addEventListener('click', function() {
+      // Call the celebrate function when the button is clicked
+      celebrate();
+      // Change the response message
+      document.getElementById('response').innerText = "Yay! You're the best! UwU";
+      // Display a happy GIF
+      document.getElementById('gifContainer').innerHTML = '<img src="happy.gif" alt="Happy GIF">';
+    });
+
+    // Event listener for the "No" button
+    document.getElementById('noButton').addEventListener('click', function() {
+      // Change the response message
+      document.getElementById('response').innerText = "Hmpff... I'm upset now :(";
+      // Display a sad GIF
+      document.getElementById('gifContainer').innerHTML = '<img src="upset.gif" alt="Sad GIF">';
+    });
+  </script>
+</body>
+
+</html>
